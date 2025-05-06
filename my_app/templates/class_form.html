@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if form.instance.id %}Update{% else %}Create{% endif %} Class</title>
+</head>
+<body>
+    <h1>{% if form.instance.id %}Update{% else %}Create{% endif %} Class</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">{% if form.instance.id %}Update{% else %}Create{% endif %}</button>
+    </form>
+    <a href="{% url 'class_list' %}">Back to class list</a>
+</body>
+</html>
