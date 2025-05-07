@@ -4,21 +4,32 @@
     <meta charset="UTF-8">
     <title>{% if form.instance.id %}Update{% else %}Create{% endif %} Class</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f6f8;
-            margin: 40px;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         h1 {
             color: #333;
+            margin-bottom: 20px;
         }
 
-        form {
+        .form-container {
             background-color: #fff;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 400px;
         }
 
@@ -26,19 +37,25 @@
             margin-bottom: 15px;
         }
 
-        input[type="text"], select, textarea {
+        input[type="text"],
+        select,
+        textarea {
             width: 100%;
-            padding: 8px;
+            padding: 10px;
             margin-top: 4px;
-            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
         }
 
         button {
+            width: 100%;
             background-color: #4CAF50;
             color: white;
-            padding: 10px 20px;
+            padding: 12px;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
+            font-size: 16px;
             cursor: pointer;
         }
 
@@ -46,17 +63,18 @@
             background-color: #45a049;
         }
 
-        a {
-            display: inline-block;
-            margin-top: 15px;
+        .back-link {
+            margin-top: 20px;
             color: #0066cc;
             text-decoration: none;
+            font-size: 14px;
         }
 
-        a:hover {
+        .back-link:hover {
             text-decoration: underline;
         }
     </style>
+    
 </head>
 <body>
     <h1>{% if form.instance.id %}Update{% else %}Create{% endif %} Class</h1>

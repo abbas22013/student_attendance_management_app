@@ -3,6 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Confirm Delete</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding: 50px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #dc3545;
+        }
+
+        form {
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #c82333;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007bff;
+            font-size: 16px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <h1>Are you sure you want to delete the class {{ class.class_code }}?</h1>
@@ -10,6 +53,6 @@
         {% csrf_token %}
         <button type="submit">Yes, Delete</button>
     </form>
-    <a href="{% url 'class_list' %}">Back to class list</a>
+    <a href="{% url 'class_list' %}">Cancel</a>
 </body>
 </html>
