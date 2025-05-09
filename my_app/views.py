@@ -32,6 +32,7 @@ def class_list(request):
     return render(request, 'class_list.html', {'classes': classes})
 
 # Create a new class
+@login_required
 def class_create(request):
     if request.method == 'POST':
         form = ClassForm(request.POST)
@@ -43,6 +44,7 @@ def class_create(request):
     return render(request, 'class_form.html', {'form': form})
 
 # Update class
+@login_required
 def class_update(request, class_id):
     class_instance = get_object_or_404(Class, id=class_id)
     if request.method == 'POST':
@@ -55,6 +57,7 @@ def class_update(request, class_id):
     return render(request, 'class_form.html', {'form': form})
 
 # Delete  class
+@login_required
 def class_delete(request, class_id):
     class_instance = get_object_or_404(Class, id=class_id)
     if request.method == 'POST':
@@ -67,6 +70,7 @@ def student_list(request):
     return render(request, 'student_list.html', {'students': students})
 
 # Create a new student
+@login_required
 def student_create(request):
     if request.method == 'POST':
         form = StudentForm(request.POST)
@@ -78,6 +82,7 @@ def student_create(request):
     return render(request, 'student_form.html', {'form': form})
 
 # Update a student
+@login_required
 def student_update(request, student_id):
     student = get_object_or_404(Student, id=student_id)
     if request.method == 'POST':
@@ -90,6 +95,7 @@ def student_update(request, student_id):
     return render(request, 'student_form.html', {'form': form})
 
 # Delete a student
+@login_required
 def student_delete(request, student_id):
     student = get_object_or_404(Student, id=student_id)
     if request.method == 'POST':
